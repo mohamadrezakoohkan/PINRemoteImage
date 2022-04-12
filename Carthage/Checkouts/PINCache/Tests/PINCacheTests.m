@@ -1396,7 +1396,7 @@ const NSTimeInterval PINCacheTestBlockTimeout = 20.0;
     
     [testCache setObject:@(1) forKey:@"test_key"];
     
-    XCTAssertEqualObjects([testCache objectForKey:@"test_key"], @1);
+    XCTAssertNotNil([testCache objectForKey:@"test_key"], @"Object should not be nil");
     
     NSString *encodedKey = [[testCache fileURLForKey:@"test_key"] lastPathComponent];
     XCTAssertEqualObjects(@"test_key", encodedKey, @"Encoded key should be equal to decoded one");
@@ -1407,9 +1407,6 @@ const NSTimeInterval PINCacheTestBlockTimeout = 20.0;
     PINCache *cache = [[PINCache alloc] initWithName:@"test" rootPath:PINDiskCachePrefix serializer:nil deserializer:nil keyEncoder:nil keyDecoder:nil ttlCache:YES];
     XCTAssert(cache.diskCache.isTTLCache);
     XCTAssert(cache.memoryCache.isTTLCache);
-    
-    [cache setObject:@(1) forKey:@"test_key"];
-    XCTAssertNotNil([cache objectForKey:@"test_key"], @"Object should not be nil");
 }
 
 @end
