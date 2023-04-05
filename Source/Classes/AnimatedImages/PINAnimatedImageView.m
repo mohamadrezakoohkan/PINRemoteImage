@@ -231,7 +231,7 @@
             _displayLink.preferredFramesPerSecond = frameRate;
         } else {
 #endif
-            _displayLink.frameInterval = frameInterval;
+            _displayLink.preferredFramesPerSecond = frameInterval;
 #if PIN_TARGET_IOS
         }
 #endif

@@ -9,7 +9,7 @@
 #import "NSData+ImageDetectors.h"
 
 #if PIN_WEBP
-#import "webp/demux.h"
+//#import "webp/demux.h"
 #endif
 
 @implementation NSData (PINImageDetectors)
@@ -122,10 +122,10 @@ static inline BOOL advancePositionWithBytes(NSUInteger *position, Byte *bytes, N
 
 - (BOOL)pin_isAnimatedWebP
 {
-    WebPBitstreamFeatures features;
-    if (WebPGetFeatures([self bytes], [self length], &features) == VP8_STATUS_OK) {
-        return features.has_animation;
-    }
+//    WebPBitstreamFeatures features;
+//    if (WebPGetFeatures([self bytes], [self length], &features) == VP8_STATUS_OK) {
+//        return features.has_animation;
+//    }
     
     return NO;
 }
