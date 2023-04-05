@@ -1,2 +1,2 @@
-github "pinterest/PINCache" ~> 3.0.3
-github "pinterest/PINOperation"
+github "mohamadrezakoohkan/PINCache" ~> 1.0.0-fork
+github "mohamadrezakoohkan/PINOperation" ~> 1.0.0-fork
